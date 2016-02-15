@@ -1,0 +1,108 @@
+
+#firstbannerdiv{
+    background-image:url('/images/slider/bann3.jpg');
+    width:100vw;
+    height:100%;
+    margin-left:-6%;
+    background-position:fixed;
+    position:relative;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
+
+#firstbannerinnerdiv{
+    
+    width:52%;
+    height: auto;
+    z-index:3;
+    position:absolute;
+    left:50%;
+    margin-left: -25%;
+    top:30%;
+    margin-top: -2%;
+    
+}
+
+#firstbannerh1{
+    color:#07c78e;
+    text-shadow: 0px 0px 0px #525252,0px 0px 0px #07c78e;
+    font-size: 64px;
+    line-height: 70px;
+    text-align:center;
+}
+
+#firstbannerh1span{
+    color:#525252;
+    text-shadow: 0px 0px 0px #07c78e,0px 0px 0px #525252 !important;
+    text-align:center;
+    margin:0px;
+}
+
+#yo{
+    color:#a7a7a7 !important;
+    text-align: center !important;
+    text-shadow: 0px 0px 0px #ffffff !important;    
+}
+
+.propose{
+    position: absolute;
+    margin-bottom: 0;
+    width:200px;
+    height: 40px;
+    background-color: #07c78e;
+    color:#ffffff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 16px;
+    border-bottom: 4px solid #525252;
+    transition: all 0.3s linear;
+    top:65%;
+    left:33%;
+    padding-top: 10px;
+}
+.propose:hover{background-color: #ffffff;color:#07c78e;}
+.call{
+    position: absolute;
+    margin-bottom: 0;
+    width:200px;
+    height: 40px;
+    background-color: #07c78e;
+    color:#ffffff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 16px;
+    border-bottom: 4px solid #525252;
+    transition: all 0.3s linear;
+    top:65%;
+    left:55%;
+    padding-top: 10px;
+}
+.call:hover{color: #fff;}
+@media screen and (max-width: 768px){
+    #firstbannerh1{
+            font-size: 18px;
+            line-height: 20px;
+    }
+    #firstbannerdiv{
+        margin-left: -22%;
+        margin-top: 12%;    
+    }
+    
+}
+
+.numb{position: absolute;
+    left:0;top: 0;
+    width:60px;height: 60px;background-color: #ffffff;
+    color:#07c78e;
+    text-align: center;
+    padding-top: 18px;
+    font-size: 26px;
+}
+
+.yv{position: absolute;
+    top:33%;
+    left:40%;
+    transform: translate(0,-50%,0,-50%;)
+}
+.spa{text-align: center;font-size: 50px !important;color:#ffffff;}
+.spah3{text-align: center;font-size: 20px;color: #ffffff;text-shadow:  0 0 0 #525252, 0 0 0 #525252;position: absolute; bottom: 0;}
