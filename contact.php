@@ -3,8 +3,8 @@ $field_name = $_POST['cf_name'];
 $field_email = $_POST['cf_email'];
 $field_message = $_POST['cf_message'];
 
-$mail_to = 'sumeet@appsclay.com';
-$subject = 'Message from a site visitor '.$field_name;
+$mail_to = 'sales@appsclay.com';
+$subject = 'Greetings From AppsClay Sales Team'.$field_name;
 
 $body_message = 'From: '.$field_name."\n";
 $body_message .= 'E-mail: '.$field_email."\n";
@@ -24,7 +24,7 @@ if ($mail_status) { ?>
 }
 else { ?>
 	<script language="javascript" type="text/javascript">
-		alert('Message failed. Please, send an email to newthinks@live.com');
+		alert('Message failed. Please, send an email to sales@appsclay.com');
 		window.location = 'index.php';
 	</script>
 <?php
