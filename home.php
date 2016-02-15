@@ -53,7 +53,7 @@
                 <a class="w-nav-link menu-li" href="#about">ABOUT</a>
                 <a class="w-nav-link menu-li" href="#service">OUR&nbsp;SERVICES</a>
                 <a class="w-nav-link menu-li" href="#portfolio">PORTFOLIO</a>
-                <a class="w-nav-link menu-li"href="#team">WHY&nbsp;AppsClay?</a>
+                <a class="w-nav-link menu-li"href="#team">WHY&nbsp;APPSCLAY?</a>
                 <a class="w-nav-link menu-li" href="#contact">CONTACT</a>
               </nav>
               <div class="w-nav-button">
@@ -871,18 +871,46 @@
           <p class="contact-para">Thanks for taking the time to contact us!
             <br>We do our best to respond quickly, it could take us 1-2 business days at max to get back to you meanwhle feel free to connect with us!</p>
           <div class="w-form">
-            <form action="contact.php" method="post">
-            <label for="name">Name:</label>
-             <input class="w-input" type="text" placeholder="Enter your name" id="cf_name" name="cf_name">
-           <label for="email">Email Address:</label>
-             <input class="w-input" placeholder="Enter your email address" type="text" id="cf_email" name="cf_email" required="required">
-           <label for="email">Your Message:</label>
-             <textarea class="w-input message" placeholder="Enter your Message Here" id="cf_message" name="cf_message"></textarea><br>
-           <input class="w-button" type="submit" value="Send" id="submit">
-         </form>
-          <div class="w-form-done">
+              <?php 
+                $action=$_REQUEST['action']; 
+                if ($action=="")    /* display the contact form */ 
+                    { 
+                    ?> 
+                    <form  action="" method="POST" enctype="multipart/form-data"> 
+                    <input type="hidden" name="action" value="submit"> 
+                    <label for="name">Name:</label>
+                     <input class="w-input" type="text" placeholder="Enter your name" id="cf_name" name="cf_name">
+                   <label for="email">Email Address:</label>
+                     <input class="w-input" placeholder="Enter your email address" type="text" id="cf_email" name="cf_email" required="required">
+                   <label for="email">Your Message:</label>
+                     <textarea class="w-input message" placeholder="Enter your Message Here" id="cf_message" name="cf_message"></textarea><br>
+                    <input /> 
+                    <input class="w-button" type="submit" value="Send email" id="submit">
+                    </form> 
+                    <?php 
+                    }  
+                else 
+{ 
+    $name=$_REQUEST['cf_name']; 
+    $email=$_REQUEST['cf_email']; 
+    $message=$_REQUEST['cf_message']; 
+    if (($name=="")||($email=="")||($message=="")) 
+        { 
+        echo "All fields are required, please fill <a href=\"\">the form</a> again."; 
+        } 
+    else{         
+        $from="From: $name<$email>\r\nReturn-path: $email"; 
+        $subject="Message sent using your contact form"; 
+        mail("sales@appsclay.com", $subject, $message, $from); 
+        echo "Email sent!"; 
+        <div class="w-form-done">
               <p>Thank you! Your submission has been received!</p>
-            </div>
+        </div>
+        } 
+    } 
+?> 
+        
+          
             <div class="w-form-fail">
               <p>Oops! Something went wrong while submitting the form :(</p>
             </div>
